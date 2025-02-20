@@ -20,7 +20,6 @@ class _QuizState extends State<Quiz> {
 
   void switchScreen() {
     setState(() {
-      selectedAnswers = [];
       activeScreen = 'questions-screen';
     });
   }
@@ -47,7 +46,7 @@ class _QuizState extends State<Quiz> {
 
     if (activeScreen == 'result-screen') {
       screenWidget = ResultsScreen(
-        chosenAnswers: [selectedAnswers],
+        chosenAnswers: selectedAnswers, // ✅ Correct
       );
     }
     return MaterialApp(
